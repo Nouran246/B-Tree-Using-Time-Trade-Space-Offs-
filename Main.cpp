@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 
+
 void displayMenu() {
     cout << "--------------- B-Tree -----------------" << endl;
     cout << "1. Insert element" << endl;
@@ -30,25 +31,40 @@ int main() {
             break;
 
         case 2:
-            cout << "Enter element to delete: ";
-            cin >> element;
-            t.deletee(element);
-            cout << "Element deleted." << endl;
+            if (t.isEmpty()) {
+                cout << "The tree is already empty" << endl;
+            }
+            else {
+                cout << "Enter element to delete: ";
+                cin >> element;
+                t.deletee(element);
+                cout << "Element deleted." << endl;
+            }
             break;
 
         case 3:
-            cout << "B-Tree elements:" << endl;
-            t.display();
-            cout << endl;
+            if (t.isEmpty()) {
+                cout << "The tree is already empty" << endl;
+            }
+            else {
+                cout << "B-Tree elements:" << endl;
+                t.display();
+                cout << endl;
+            }
             break;
 
         case 4:
-            cout << "Enter element to search: ";
-            cin >> element;
-            if (t.search(element) != nullptr)
-                cout << "Element found." << endl;
-            else
-                cout << "Element not found." << endl;
+            if (t.isEmpty()) {
+                cout << "The tree is already empty" << endl;
+            }
+            else {
+                cout << "Enter element to search: ";
+                cin >> element;
+                if (t.search(element) != nullptr)
+                    cout << "Element " << element << " is found ";
+                else
+                    cout << "Element " << element << " is not found." << endl;
+            }
             break;
 
         case 5:
