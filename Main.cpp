@@ -61,7 +61,7 @@ int main() {
                 cout << "Enter element to search: ";
                 cin >> element;
                 if (t.search(element) != nullptr)
-                    cout << "Element " << element << " is found ";
+                    cout << "Element " << element << " is found "<<endl;
                 else
                     cout << "Element " << element << " is not found." << endl;
             }
