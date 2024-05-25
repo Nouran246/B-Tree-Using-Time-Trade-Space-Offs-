@@ -45,6 +45,9 @@ public:
     BTreeNode* search(int k) {
         return (root == NULL) ? NULL : root->search(k);
     }
+ bool isEmpty() {
+     return root == NULL;
+ }
 
     void insert(int k);
     void deletee(int k);
